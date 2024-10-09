@@ -6,8 +6,13 @@ const nextConfig = {
               protocol: 'https',
               hostname: 'a.ltrbxd.com',
             },
+            // {
+            //   protocol: 'https',
+            //   hostname: 'i.ebayimg.com',
+            // },
           ],
         },
+        
 };
 
 export default nextConfig;
