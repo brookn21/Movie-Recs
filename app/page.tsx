@@ -10,15 +10,18 @@ import Link from 'next/link';
 
 export default function Home() {
 
-
 const [movies, setMovies] = useState([]);
 
 // const itemsArray = page.data.items;
 // *trending* https://api.themoviedb.org/3/movie/popular?
 // https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1
+
+
 const callAPI = async () => {
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+
   try {
-    const res = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=d340d2e7a465c96ada1d20da66d46322&page=1`);
+    const res = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`);
     const data = await res.json();
     setMovies(data.results);
   } catch (err) {
